@@ -6,14 +6,15 @@
 
 using namespace std;
 
-class Fish:Animal {
+class Fish : public Animal {
 public:
 	void setTypePitanie(string);
 	string getTypePitanie();
-	Fish(string);
+	Fish(string, string, string);
 	Fish();
 	Fish(const Fish&);
 	~Fish();
+	string outputFBC();
 private:
 	string typePitanie;
 

@@ -14,7 +14,8 @@ public:
 	Animal();
 	Animal(const Animal&);
 	virtual ~Animal();
-private:
+	virtual string outputFBC();
+	protected:
 	string poroda;
 	string okras;
 
