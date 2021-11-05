@@ -12,7 +12,7 @@ public:
 	string getOkras();
 	Animal(string, string);
 	Animal();
-	Animal(const Animal& A1);
+	Animal(const Animal&);
 	~Animal();
 private:
 	string poroda;
