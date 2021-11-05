@@ -13,7 +13,7 @@ public:
 	Animal(string, string);
 	Animal();
 	Animal(const Animal&);
-	~Animal();
+	virtual ~Animal();
 private:
 	string poroda;
 	string okras;
