@@ -4,9 +4,12 @@
 #include "Fish.h"
 #include "Bird.h"
 #include "Cat.h"
+#include <fstream>
 
 int main()
 {
+	ifstream fin;
+	ofstream fout;
 	setlocale(LC_ALL, "rus");
 	int k = 1;
 	int k1 = 0;
@@ -14,11 +17,11 @@ int main()
 	int k3 = 0;
 	string S1, S2, S3, S4;
 	cout << "¬ведите размер контейнера" << endl;
-	while (k2<=0) {
+	while (k2 <= 0) {
 		cin >> k2;
 	}
 	Keeper K(k2);
-	cout << "1 - добавить\n2 - удалить\n3 - вывести на экран\n4 - изменить данные\n";
+	cout << "1 - добавить\n2 - удалить\n3 - вывести на экран\n4 - изменить данные\n5 - записать в файл\n6 - считать из файла\n";
 	while (k != 0)
 	{
 		//if (cin.fail())
@@ -107,18 +110,24 @@ int main()
 			}
 			break;
 		case 5:
+			try {
+				K.fileWrite();
+			}
+			catch (exception E) {
+				cout << E.what() << endl;
+			}
 			break;
 		case 6:
-			break;
-		case 7:
+			try {
+				K.fileRead();
+			} 
+			catch (exception E) {
+				cout << E.what() << endl;
+			}
 			break;
 		default:
 			break;
 		}
-
 	}
-
-	
-
 	return 0;
 }

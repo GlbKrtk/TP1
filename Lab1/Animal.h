@@ -16,8 +16,8 @@ public:
 	virtual ~Animal();
 	virtual string outputFBC();
 	virtual void changeType();
+
 protected:
 	string poroda;
 	string okras;
-
 };

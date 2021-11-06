@@ -11,6 +11,8 @@ public:
 	~Keeper();
 	void outputContainer();
 	void changeParameter(int);
+	void fileRead();
+	void fileWrite();
 private:
 	Animal **ptrclass;
 	int size;

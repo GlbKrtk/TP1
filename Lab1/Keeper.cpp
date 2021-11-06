@@ -1,5 +1,8 @@
 #include "Keeper.h"
 #include "Fish.h"
+#include "Bird.h"
+#include "Cat.h"
+#include <fstream>
 
 Keeper::Keeper(int s1) {
 	if (s1 <= 0)
@@ -75,5 +78,78 @@ void Keeper::changeParameter(int k) {
 	else
 	{
 		ptrclass[k]->changeType();
+	}
+}
+
+void Keeper::fileRead() {
+	ifstream fin;
+	Animal *F;
+	string f1, S1, S2, S3, S4;
+	fin.open("file.txt");
+	if (fin.is_open())
+	{
+		if (index > 0)
+		{
+			throw exception("Контейнер занят");
+		}
+		fin >> index;
+		if (index >= size)
+		{
+			throw exception("Выход за пределы контейнера");
+		}
+		for (int i = 0; i < index; i++)
+		{
+			fin >> f1;
+			if (f1 == "Рыба:")
+			{
+				fin >> S1 >> S1;
+				fin >> S2 >> S2;
+				fin >> S3 >> S3 >> S3;
+				F = new Fish(S1, S2, S3);
+			}
+			else if (f1 == "Птица:")
+			{
+				fin >> S1 >> S1;
+				fin >> S2 >> S2;
+				fin >> S3 >> S3 >> S3;
+				fin >> S4 >> S4 >> S4;
+				F = new Bird(S1, S2, S3, S4);
+			}
+			else if (f1 == "Кошка/Кот:")
+			{
+				fin >> S1 >> S1;
+				fin >> S2 >> S2;
+				fin >> S3 >> S3;
+				fin >> S4 >> S4;
+				F = new Cat(S1, S2, S3, S4);
+			}
+			else
+			{
+				index = i;
+				throw exception("Файл некорректный");
+			}
+			ptrclass[i] = F;
+		}
+	}
+	else
+	{
+		throw exception("File does not exist");
+	}
+}
+
+void Keeper::fileWrite() {
+	ofstream fout;
+	fout.open("file.txt");
+	if (fout.is_open())
+	{
+		fout << index << endl;
+		for (int i = 0; i < index; i++)
+		{
+			fout << ptrclass[i]->outputFBC();
+		}
+	}
+	else
+	{
+		throw exception("File does not exist");
 	}
 }
