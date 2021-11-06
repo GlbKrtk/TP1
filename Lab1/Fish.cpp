@@ -1,31 +1,31 @@
-#include "Fish.h"
+ï»¿#include "Fish.h"
 
 Fish::Fish(string p1, string o1, string t1) {
 	poroda = p1;
 	okras = o1;
 	typePitanie = t1;
-	cout << "Âûçâàí êëàññ Fish, êîíñòðóêòîð ñ ïàðàìåòðàìè\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Fish, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸\n";
 }
 
 Fish::Fish() {
 	poroda = "";
 	okras = "";
 	typePitanie = "";
-	cout << "Âûçâàí êëàññ Fish, êîíñòðóêòîð áåç ïàðàìåòðîâ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Fish, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²\n";
 }
 
 Fish::Fish(const Fish& F1) {
 	poroda = F1.poroda;
 	okras = F1.okras;
 	typePitanie = F1.typePitanie;
-	cout << "Âûçâàí êëàññ Fish, êîíñòðóêòîð êîïèðîâàíèÿ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Fish, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ\n";
 }
 
 Fish::~Fish() {
 	poroda = "";
 	okras = "";
 	typePitanie = "";
-	cout << "Âûçâàí êëàññ Fish, äåñòðóêòîð\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Fish, Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€\n";
 }
 
 void Fish::setTypePitanie(string t1) {
@@ -37,7 +37,7 @@ string Fish::getTypePitanie() {
 }
 
 string Fish::outputFBC() {
-	string str = "Ðûáà: \nÏîðîäà: " + poroda + "\nÎêðàñ: " + okras + "\nÒèï ïèòàíèÿ: " + typePitanie + "\n";
+	string str = "Ð Ñ‹Ð±Ð°: \nÐŸÐ¾Ñ€Ð¾Ð´Ð°: " + poroda + "\nÐžÐºÑ€Ð°Ñ: " + okras + "\nÐ¢Ð¸Ð¿ Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ: " + typePitanie + "\n";
 	return str;
 }
 
@@ -45,9 +45,9 @@ string Fish::outputFBC() {
 void Fish::changeType() {
 	int k1;
 	string k2;
-	cout << "Ââåäèòå: \n1, ÷òîáû ïîìåíÿòü ïîðîäó\n2, ÷òîáû ïîìåíÿòü îêðàñ\n3, ÷òîáû ïîìåíÿòü òèï ïèòàíèÿ ðûáû" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ: \n1, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¿Ð¾Ñ€Ð¾Ð´Ñƒ\n2, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¾ÐºÑ€Ð°Ñ\n3, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ñ‚Ð¸Ð¿ Ð¿Ð¸Ñ‚Ð°Ð½Ð¸Ñ Ñ€Ñ‹Ð±Ñ‹" << endl;
 	cin >> k1;
-	cout << "Ââåäèòå íîâûé ïàðàìåòð:" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€:" << endl;
 	cin >> k2;
 	if (k1 == 1)
 	{

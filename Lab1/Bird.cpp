@@ -1,11 +1,11 @@
-#include "Bird.h"
+ï»¿#include "Bird.h"
 
 Bird::Bird(string p1, string o1, string c1, string g1) {
 	poroda = p1;
 	okras = o1;
 	chemPitaetsa = c1;
 	gdeObitaet = g1;
-	cout << "Âûçâàí êëàññ Bird, êîíñòðóêòîð ñ ïàðàìåòðàìè\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Bird, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸\n";
 }
 
 Bird::Bird() {
@@ -13,7 +13,7 @@ Bird::Bird() {
 	okras = "";
 	chemPitaetsa = "";
 	gdeObitaet = "";
-	cout << "Âûçâàí êëàññ Bird, êîíñòðóêòîð áåç ïàðàìåòðîâ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Bird, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²\n";
 }
 
 Bird::Bird(const Bird& B1) {
@@ -21,7 +21,7 @@ Bird::Bird(const Bird& B1) {
 	okras = B1.okras;
 	chemPitaetsa = B1.chemPitaetsa;
 	gdeObitaet = B1.gdeObitaet;
-	cout << "Âûçâàí êëàññ Bird, êîíñòðóêòîð êîïèðîâàíèÿ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Bird, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ\n";
 }
 
 Bird::~Bird() {
@@ -29,7 +29,7 @@ Bird::~Bird() {
 	okras = "";
 	chemPitaetsa = "";
 	gdeObitaet = "";
-	cout << "Âûçâàí êëàññ Bird, äåñòðóêòîð\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Bird, Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€\n";
 }
 
 void Bird::setChemPitaetsa(string c1) {
@@ -49,16 +49,16 @@ string Bird::getGdeObitaet() {
 }
 
 string Bird::outputFBC() {
-	string str = "Ïòèöà: \nÏîðîäà: " + poroda + "\nÎêðàñ: " + okras + "\n×åì ïèòàåòñÿ: " + chemPitaetsa + "\nÃäå îáèòàåò: " + gdeObitaet + "\n";
+	string str = "ÐŸÑ‚Ð¸Ñ†Ð°: \nÐŸÐ¾Ñ€Ð¾Ð´Ð°: " + poroda + "\nÐžÐºÑ€Ð°Ñ: " + okras + "\nÐ§ÐµÐ¼ Ð¿Ð¸Ñ‚Ð°ÐµÑ‚ÑÑ: " + chemPitaetsa + "\nÐ“Ð´Ðµ Ð¾Ð±Ð¸Ñ‚Ð°ÐµÑ‚: " + gdeObitaet + "\n";
 	return str;
 }
 
 void Bird::changeType() {
 	int k1;
 	string k2;
-	cout << "Ââåäèòå: \n1, ÷òîáû ïîìåíÿòü ïîðîäó\n2, ÷òîáû ïîìåíÿòü îêðàñ\n3, ÷òîáû ïîìåíÿòü ÷åì ïèòàåòñÿ\n4, ÷òîáû ïîìåíÿòü ãäå îáèòàåò ïòèöà" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ: \n1, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¿Ð¾Ñ€Ð¾Ð´Ñƒ\n2, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð¾ÐºÑ€Ð°Ñ\n3, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ñ‡ÐµÐ¼ Ð¿Ð¸Ñ‚Ð°ÐµÑ‚ÑÑ\n4, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð³Ð´Ðµ Ð¾Ð±Ð¸Ñ‚Ð°ÐµÑ‚ Ð¿Ñ‚Ð¸Ñ†Ð°" << endl;
 	cin >> k1;
-	cout << "Ââåäèòå íîâûé ïàðàìåòð:" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€:" << endl;
 	cin >> k2;
 	if (k1 == 1)
 	{

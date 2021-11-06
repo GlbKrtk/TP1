@@ -1,27 +1,27 @@
-#include "Animal.h"
+ï»¿#include "Animal.h"
 
 Animal::Animal(string p1, string o1) {
 	poroda = p1;
 	okras = o1;
-	cout << "Âûçâàí êëàññ Animal, êîíñòðóêòîð ñ ïàðàìåòðàìè\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Animal, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ñ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð°Ð¼Ð¸\n";
 }
 
 Animal::Animal() {
 	poroda = "";
 	okras = "";
-	cout << "Âûçâàí êëàññ Animal, êîíñòðóêòîð áåç ïàðàìåòðîâ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Animal, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð±ÐµÐ· Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²\n";
 }
 
 Animal::Animal(const Animal& A1) {
 	poroda = A1.poroda;
 	okras = A1.okras;
-	cout << "Âûçâàí êëàññ Animal, êîíñòðóêòîð êîïèðîâàíèÿ\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Animal, ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ ÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ\n";
 }
 
 Animal::~Animal() {
 	poroda = "";
 	okras = "";
-	cout << "Âûçâàí êëàññ Animal, äåñòðóêòîð\n";
+	cout << "Ð’Ñ‹Ð·Ð²Ð°Ð½ ÐºÐ»Ð°ÑÑ Animal, Ð´ÐµÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€\n";
 }
 
 void Animal::setPoroda(string p1) {

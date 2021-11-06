@@ -1,4 +1,4 @@
-#include "Keeper.h"
+п»ї#include "Keeper.h"
 #include "Fish.h"
 #include "Bird.h"
 #include "Cat.h"
@@ -7,12 +7,12 @@
 Keeper::Keeper(int s1) {
 	if (s1 <= 0)
 	{
-		throw exception("Размер массива - отрицательное число");
+		throw exception("Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР° - РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ");
 	}
 	ptrclass = new Animal*[s1];
 	size = s1;
 	index = 0;
-	cout << "Вызван класс Keeper, конструктор с параметрами\n";
+	cout << "Р’С‹Р·РІР°РЅ РєР»Р°СЃСЃ Keeper, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё\n";
 	
 }
 
@@ -20,7 +20,7 @@ Keeper::Keeper() {
 	size = 0;
 	ptrclass = NULL;
 	index = 0;
-	cout << "Вызван класс Keeper, конструктор без параметров\n";
+	cout << "Р’С‹Р·РІР°РЅ РєР»Р°СЃСЃ Keeper, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ\n";
 }
 
 Keeper::Keeper(const Keeper& K1) {
@@ -29,7 +29,7 @@ Keeper::Keeper(const Keeper& K1) {
 	for (int i = 0; i < size; i++)
 		ptrclass[i] = K1.ptrclass[i];
 	index = K1.index;
-	cout << "Вызван класс Keeper, конструктор копирования\n";
+	cout << "Р’С‹Р·РІР°РЅ РєР»Р°СЃСЃ Keeper, РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ\n";
 }
 
 Keeper::~Keeper() {
@@ -38,12 +38,12 @@ Keeper::~Keeper() {
 	delete[] ptrclass;
 	size = 0;
 	index = 0;
-	cout << "Вызван класс Keeper, деструктор\n";
+	cout << "Р’С‹Р·РІР°РЅ РєР»Р°СЃСЃ Keeper, РґРµСЃС‚СЂСѓРєС‚РѕСЂ\n";
 }
 
 void Keeper::addAnimal(Animal &K1) {
 	if (index >= size)
-		throw exception("Выход за пределы массива");
+		throw exception("Р’С‹С…РѕРґ Р·Р° РїСЂРµРґРµР»С‹ РјР°СЃСЃРёРІР°");
 	ptrclass[index] = &K1;
 	index++;
 }
@@ -55,7 +55,7 @@ void Keeper::deleteAnimal() {
 		index--;
 	}
 	else
-		cout << "Массив пуст" << endl;
+		cout << "РњР°СЃСЃРёРІ РїСѓСЃС‚" << endl;
 }
 
 void Keeper::outputContainer() {
@@ -67,13 +67,13 @@ void Keeper::outputContainer() {
 		}
 	}
 	else
-		cout << "Массив пуст" << endl;
+		cout << "РњР°СЃСЃРёРІ РїСѓСЃС‚" << endl;
 }
 
 void Keeper::changeParameter(int k) {
 	if (k >= index)
 	{
-		cout << "Животное с этим номером ещё не создано" << endl;
+		cout << "Р–РёРІРѕС‚РЅРѕРµ СЃ СЌС‚РёРј РЅРѕРјРµСЂРѕРј РµС‰С‘ РЅРµ СЃРѕР·РґР°РЅРѕ" << endl;
 	}
 	else
 	{
@@ -90,24 +90,24 @@ void Keeper::fileRead() {
 	{
 		if (index > 0)
 		{
-			throw exception("Контейнер занят");
+			throw exception("РљРѕРЅС‚РµР№РЅРµСЂ Р·Р°РЅСЏС‚");
 		}
 		fin >> index;
 		if (index >= size)
 		{
-			throw exception("Выход за пределы контейнера");
+			throw exception("Р’С‹С…РѕРґ Р·Р° РїСЂРµРґРµР»С‹ РєРѕРЅС‚РµР№РЅРµСЂР°");
 		}
 		for (int i = 0; i < index; i++)
 		{
 			fin >> f1;
-			if (f1 == "Рыба:")
+			if (f1 == "Р С‹Р±Р°:")
 			{
 				fin >> S1 >> S1;
 				fin >> S2 >> S2;
 				fin >> S3 >> S3 >> S3;
 				F = new Fish(S1, S2, S3);
 			}
-			else if (f1 == "Птица:")
+			else if (f1 == "РџС‚РёС†Р°:")
 			{
 				fin >> S1 >> S1;
 				fin >> S2 >> S2;
@@ -115,7 +115,7 @@ void Keeper::fileRead() {
 				fin >> S4 >> S4 >> S4;
 				F = new Bird(S1, S2, S3, S4);
 			}
-			else if (f1 == "Кошка/Кот:")
+			else if (f1 == "РљРѕС€РєР°/РљРѕС‚:")
 			{
 				fin >> S1 >> S1;
 				fin >> S2 >> S2;
@@ -126,7 +126,7 @@ void Keeper::fileRead() {
 			else
 			{
 				index = i;
-				throw exception("Файл некорректный");
+				throw exception("Р¤Р°Р№Р» РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№");
 			}
 			ptrclass[i] = F;
 		}
