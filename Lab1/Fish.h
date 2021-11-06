@@ -15,6 +15,7 @@ public:
 	Fish(const Fish&);
 	~Fish();
 	string outputFBC();
+	void changeType();
 private:
 	string typePitanie;
 

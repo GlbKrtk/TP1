@@ -16,6 +16,7 @@ public:
 	Bird(const Bird&);
 	~Bird();
 	string outputFBC();
+	void changeType();
 private:
 	string chemPitaetsa;
 	string gdeObitaet;

@@ -16,6 +16,7 @@ public:
 	Cat(const Cat& A1);
 	~Cat();
 	string outputFBC();
+	void changeType();
 private:
 	string fio;
 	string nickname;

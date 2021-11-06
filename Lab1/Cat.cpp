@@ -52,3 +52,28 @@ string Cat::outputFBC() {
 	string str = "Кошка/Кот: \nПорода: " + poroda + "\nОкрас: " + okras + "\nФИО владельца: " + fio + "\nКличка: " + nickname + "\n";
 	return str;
 }
+
+void Cat::changeType() {
+	int k1;
+	string k2;
+	cout << "Введите: \n1, чтобы поменять породу\n2, чтобы поменять окрас\n3, чтобы поменять ФИО владельца\n4, чтобы поменять кличку кошки" << endl;
+	cin >> k1;
+	cout << "Введите новый параметр:" << endl;
+	cin >> k2;
+	if (k1 == 1)
+	{
+		setPoroda(k2);
+	}
+	else if (k1 == 2)
+	{
+		setOkras(k2);
+	}
+	else if (k1 == 3)
+	{
+		setFIO(k2);
+	}
+	else if (k1 == 4)
+	{
+		setNickname(k2);
+	}
+}

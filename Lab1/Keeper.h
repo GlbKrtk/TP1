@@ -10,6 +10,7 @@ public:
 	Keeper(const Keeper&);
 	~Keeper();
 	void outputContainer();
+	void changeParameter(int);
 private:
 	Animal **ptrclass;
 	int size;

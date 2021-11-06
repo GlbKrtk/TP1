@@ -52,3 +52,28 @@ string Bird::outputFBC() {
 	string str = "Птица: \nПорода: " + poroda + "\nОкрас: " + okras + "\nЧем питается: " + chemPitaetsa + "\nГде обитает: " + gdeObitaet + "\n";
 	return str;
 }
+
+void Bird::changeType() {
+	int k1;
+	string k2;
+	cout << "Введите: \n1, чтобы поменять породу\n2, чтобы поменять окрас\n3, чтобы поменять чем питается\n4, чтобы поменять где обитает птица" << endl;
+	cin >> k1;
+	cout << "Введите новый параметр:" << endl;
+	cin >> k2;
+	if (k1 == 1)
+	{
+		setPoroda(k2);
+	}
+	else if (k1 == 2)
+	{
+		setOkras(k2);
+	}
+	else if (k1 == 3)
+	{
+		setChemPitaetsa(k2);
+	}
+	else if (k1 == 4)
+	{
+		setGdeObitaet(k2);
+	}
+}

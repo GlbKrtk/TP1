@@ -1,10 +1,16 @@
 #include "Keeper.h"
+#include "Fish.h"
 
 Keeper::Keeper(int s1) {
+	if (s1 <= 0)
+	{
+		throw exception("Размер массива - отрицательное число");
+	}
 	ptrclass = new Animal*[s1];
 	size = s1;
 	index = 0;
 	cout << "Вызван класс Keeper, конструктор с параметрами\n";
+	
 }
 
 Keeper::Keeper() {
@@ -24,8 +30,8 @@ Keeper::Keeper(const Keeper& K1) {
 }
 
 Keeper::~Keeper() {
-	//for (int i = 0; i < index; i++)
-	//	delete ptrclass[i];
+	for (int i = 0; i < index; i++)
+		delete ptrclass[i];
 	delete[] ptrclass;
 	size = 0;
 	index = 0;
@@ -33,18 +39,41 @@ Keeper::~Keeper() {
 }
 
 void Keeper::addAnimal(Animal &K1) {
+	if (index >= size)
+		throw exception("Выход за пределы массива");
 	ptrclass[index] = &K1;
 	index++;
 }
 
 void Keeper::deleteAnimal() {
-	delete ptrclass[index];
-	index--;
+	if (index > 0)
+	{
+		delete ptrclass[index-1];
+		index--;
+	}
+	else
+		cout << "Массив пуст" << endl;
 }
 
 void Keeper::outputContainer() {
-	for (int i = 0; i < index; i++)
+	if (index > 0)
 	{
-		cout << ptrclass[i]->outputFBC();
+		for (int i = 0; i < index; i++)
+		{
+			cout << ptrclass[i]->outputFBC();
+		}
+	}
+	else
+		cout << "Массив пуст" << endl;
+}
+
+void Keeper::changeParameter(int k) {
+	if (k >= index)
+	{
+		cout << "Животное с этим номером ещё не создано" << endl;
+	}
+	else
+	{
+		ptrclass[k]->changeType();
 	}
 }

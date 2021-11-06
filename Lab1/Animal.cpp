@@ -43,3 +43,7 @@ string Animal::getOkras() {
 string Animal::outputFBC() {
 	return "";
 }
+
+void Animal::changeType() {
+	
+}
