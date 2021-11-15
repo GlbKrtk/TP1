@@ -24,11 +24,11 @@ int main()
 	cout << "1 - добавить\n2 - удалить\n3 - вывести на экран\n4 - изменить данные\n5 - записать в файл\n6 - считать из файла\n";
 	while (k != 0)
 	{
-		//if (cin.fail())
-		//{
-		//	std::cin.clear();
-		//	std::cin.ignore(32767, '\n');
-		//}
+		if (cin.fail())
+		{
+			std::cin.clear();
+			std::cin.ignore(32767, '\n');
+		}
 		cin >> k;
 		switch (k) {
 		case 1:
@@ -129,5 +129,6 @@ int main()
 			break;
 		}
 	}
+	cout << "Выход из программы" << endl;
 	return 0;
 }
